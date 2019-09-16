@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <title>Water-bill</title>
+</head>
+<body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/6.2.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#reserved-urls -->
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+    <!-- <img src="img/samuel-scrimshaw-ebbFZvavGy4-unsplash.jpg" id="bg" alt=""> -->
+    <img loading="lazy" src="img/water-background.jpg" id="bg" alt="">
+
+    <div class="sidebar">
+        <h1>מחשבון המים</h1>
+        <h4> מחלק את חשבונית המים בין הדיירים בקלות ובחלוקה מדוייקת</h4>
+        <div class="line-separator"></div>
+        <nav>
+            <div class="sidebar-nav">
+                <div class="nav-item">הסבר</div>
+                <div class="nav-item">שמור</div>
+                <div class="nav-item">הגדרות</div>
+            </div>
+            <div class="nav-window">
+              כאן יופיע הסבר מפורט...
+            </div>
+        </nav>
+
+    </div>
+    <div class="form-container">    
+        <ul id="progressbar">
+            <li class="active">פרטי החשבונית</li>
+            <li>צרכנים נוספים</li>
+            <li>התוצאה</li>
+        </ul>
+        <form >
+            <fieldset class="animated">
+                <h2 class="fs-title">פרטי החשבונית</h2>
+                <div class="fields-container">
+                    <div class="main-consumer">
+                        <div class="input-container">
+                            <input class="family-names popup" type="text" data-label="name-main" placeholder="שם" value="" data-toggle="tooltip" title="שם בעל החשבונית">
+                            <input class="amount-of-people popup" type="number" data-label="people-main" placeholder="נפשות" value="" data-toggle="tooltip" title="מספר נפשות">
+                        </div>
+                        <div class="input-container">
+                            <input class="prices" type="number" data-label="tariff-1" placeholder='מחיר למ"ק - תעריף 1' value="" data-toggle="tooltip" title="המחיר של תעריף אחד">
+                            <input class="prices" id="test" type="number" data-label="tariff-2" placeholder='מחיר למ"ק - תעריף 2' value="" data-toggle="tooltip" title="המחיר של תעריף שתיים">
+                        </div>
+                        <div class="input-container">
+                            <input class="usage-amount" type="number" data-label="amount-tariff-1" placeholder="כמות מים שחויב במחיר 1" value="" data-toggle="tooltip" title="כמות מים שחויב במחיר 1">
+                            <input class="usage-amount" type="number" data-label="amount-tariff-2" placeholder="כמות מים שחויב במחיר 2" value="" data-toggle="tooltip" title="כמות מים שחויב במחיר 2">
+                        </div>
+                    </div>
+                 </div>
+                <button type="button" name="next" class="next action-button first-next">הבא</button>
+            </fieldset>
+            <fieldset class="animated">
+                <h2 class="fs-title">פרטי הצרכנים הנוספים</h2>
+                <div class="fields-container">
+                    <div class="secondary-consumers">
+                        <!-- <div class="consumer">
+                            <div class="input-container">
+                                <input class="family-names" type="text" data-label="name-2" placeholder="שם" value=""  data-toggle="tooltip" title="שם צרכן משני">
+                                <input class="amount-of-people" type="number" data-label="people-2" placeholder="נפשות" value="" data-toggle="tooltip" title="מספר נפשות">
+                            </div>
+                            <div class="input-container meters">
+                                <input type="number" data-label="previous-meter-reading" placeholder="קריאת מונה קודמת" value="" data-toggle="tooltip" title="קריאת מונה קודמת">
+                                <input type="number" data-label="current-meter-reading" placeholder="קריאת מונה נוכחית" value="21" data-toggle="tooltip" title="קריאת מונה נוכחית">
+                            </div>
+                        </div> -->
+                        <div class="consumer">
+                            <div class="input-container">
+                                <input class="family-names" type="text" data-label="name-2" placeholder="שם" value="" data-toggle="tooltip" title="שם צרכן משני">
+                                <input class="amount-of-people" type="number" data-label="people-2" placeholder="נפשות" value="" data-toggle="tooltip" title="מספר נפשות">
+                            </div>
+                            <div class="input-container meters">
+                                <input type="number" data-label="previous-meter-reading" placeholder="קריאת מונה קודמת" value="" data-toggle="tooltip" title="קריאת מונה קודמת">
+                                <input type="number" data-label="current-meter-reading" placeholder="קריאת מונה נוכחית" value="" data-toggle="tooltip" title="קריאת מונה נוכחית">
+                            </div>
+                            <!-- <div class="consumer">
+                                <div class="input-container">
+                                    <input class="family-names" type="text" data-label="name-2" placeholder="שם" value=""  data-toggle="tooltip" title="שם צרכן משני">
+                                    <input class="amount-of-people" type="number" data-label="people-2" placeholder="נפשות" value="8" data-toggle="tooltip" title="מספר נפשות">
+                                </div>
+                                <div class="input-container meters">
+                                    <input type="number" data-label="previous-meter-reading" placeholder="קריאת מונה קודמת" value="" data-toggle="tooltip" title="קריאת מונה קודמת">
+                                    <input type="number" data-label="current-meter-reading" placeholder="קריאת מונה נוכחית" value="" data-toggle="tooltip" title="קריאת מונה נוכחית">
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            <div class="add-remove-buttons">
+                <button type="button" class="add-button" onclick="addConsumer()">&plus;</button>
+            </div>
+                <button type="button" name="previous" class="previous action-button">הקודם</button>
+                <button type="button" name="next" class="next action-button calculate">הבא</button>
+            </fieldset> 
+            <fieldset class="animated" id="result">
+                <h2 class="fs-title">תוצאה</h2>
+                <div class="fields-container">
+                    <table id="result-table"></table>
+                </div>
+                <button id="result-previous-btn" type="button" name="previous" class="previous action-button action-button">הקודם</button>
+            </fieldset>
+        </form>
+    </div>
+    <a id="copyright" href="mailto:shayaulman@gmail.com">shayaulman@gmail.com 2019 &copy;</a>
+    <!-- <div class="sidebar" id="sidebar"><div class="empty-list">Results</div></div> -->
+
+    
+    <script src="app.js"></script>
+    <script src="anim-valid.ation.js"></script>
+    <script>
+
+       
+
+
+
+    </script>
+
+</body>
+</html>

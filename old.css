@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+
+html {
+    margin: 0;
+    height: 100%;
+  }
+  
+
+  
+ 
+fieldset:not(:first-of-type) {
+	display: none;
+}
+
+
+
+
+
+
+
+
+/* .btn-container {
+    display: flex;
+    position: relative;
+} */
+
+form .action-button:hover, form.action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #072c70;
+}
+
+table {
+    width: 100%;    
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    color: #2C3E50;
+    font-size: 12px;
+}
